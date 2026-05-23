@@ -56,16 +56,11 @@ RUN wget -q https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_
 RUN python3.13 -m venv ${VIRTUAL_ENV} && \
     python -m pip install --upgrade pip setuptools wheel packaging build ninja
 
-# PyTorch 2.9.1 + CUDA 12.8.1
-RUN python -m pip install \
-    --index-url https://download.pytorch.org/whl/cu128 \
-    torch==2.9.1 torchvision torchaudio
-
 WORKDIR /
 
 # Labels
-LABEL org.opencontainers.image.title="python pytorch cuda develop base image" \
+LABEL org.opencontainers.image.title="Python cuda develop base image" \
       org.opencontainers.image.description="Python compiled from source" \
-      org.opencontainers.image.source="https://hub.docker.com/r/ls250824/python-pytorch-cuda-ubuntu-runtime" \
+      org.opencontainers.image.source="https://hub.docker.com/r/ls250824/python-cuda-ubuntu-runtime" \
       org.opencontainers.image.licenses="MIT"
 
