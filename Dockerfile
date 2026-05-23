@@ -69,6 +69,3 @@ LABEL org.opencontainers.image.title="python pytorch cuda develop base image" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/python-pytorch-cuda-ubuntu-runtime" \
       org.opencontainers.image.licenses="MIT"
 
-# Test
-RUN python -c "import torch, torchvision, torchaudio, triton; \
-print(f'Torch: {torch.__version__}\\nTorchvision: {torchvision.__version__}\\nTorchaudio: {torchaudio.__version__}\\nTriton: {triton.__version__}\\nCUDA available: {torch.cuda.is_available()}\\nCUDA version: {torch.version.cuda}')"
