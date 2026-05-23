@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-FROM nvidia/cuda:12.8.1-cudnn-runtime-ubuntu24.04
+FROM nvidia/cuda:12.8.1-cudnn-devel-ubuntu24.04
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHON_VERSION=3.13.3 \
@@ -56,7 +56,7 @@ RUN wget -q https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_
 RUN python3.13 -m venv ${VIRTUAL_ENV} && \
     python -m pip install --upgrade pip setuptools wheel packaging build ninja
 
-# PyTorch 2.9.1 + CUDA 12.8
+# PyTorch 2.9.1 + CUDA 12.8.1
 RUN python -m pip install \
     --index-url https://download.pytorch.org/whl/cu128 \
     torch==2.9.1 torchvision torchaudio
@@ -64,7 +64,7 @@ RUN python -m pip install \
 WORKDIR /
 
 # Labels
-LABEL org.opencontainers.image.title="python pytorch cuda runtime base image" \
+LABEL org.opencontainers.image.title="python pytorch cuda develop base image" \
       org.opencontainers.image.description="Python compiled from source" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/python-pytorch-cuda-ubuntu-runtime" \
       org.opencontainers.image.licenses="MIT"
