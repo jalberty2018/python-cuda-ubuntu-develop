@@ -40,7 +40,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xz-utils \
     openssh-server openssh-client \
     git git-lfs \
-    tmux wget vim nano mc htop curl lshw pciutils nvtop 7zip lsof jq ncdu unzip
+    tmux wget vim nano mc htop curl lshw pciutils nvtop 7zip lsof jq ncdu unzip \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp
