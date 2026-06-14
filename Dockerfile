@@ -61,6 +61,6 @@ WORKDIR /
 # Labels
 LABEL org.opencontainers.image.title="Python cuda develop base image" \
       org.opencontainers.image.description="Python compiled from source" \
-      org.opencontainers.image.source="https://hub.docker.com/r/ls250824/python-cuda-ubuntu-runtime" \
+      org.opencontainers.image.source="https://github.com/jalberty2018/python-cuda-ubuntu-develop" \
       org.opencontainers.image.licenses="MIT"
 
